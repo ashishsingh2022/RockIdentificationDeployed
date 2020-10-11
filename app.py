@@ -16,7 +16,7 @@ model = load_model("RockIdentification.h5")
 
 @app.route('/')
 def index():
-    return render_template('base.html')
+    return "App is Running"#render_template('base.html')
 
 @app.route('/predict',methods = ['GET','POST'])
 def upload():
