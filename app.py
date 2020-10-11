@@ -1,3 +1,4 @@
+'''
 import numpy as np
 import os
 from keras.models import load_model
@@ -6,17 +7,20 @@ import tensorflow as tf
 
 global graph
 graph = tf.get_default_graph() #to see the predictions it is required without this it willnot work
-
+'''
 from flask import Flask , request, render_template,url_for
 from werkzeug.utils import secure_filename
 from gevent.pywsgi import WSGIServer
 
 app = Flask(__name__)
-model = load_model("RockIdentification.h5")
-
 @app.route('/')
 def index():
     return "App is Running"#render_template('base.html')
+
+'''
+model = load_model("RockIdentification.h5")
+
+
 
 @app.route('/predict',methods = ['GET','POST'])
 def upload():
@@ -180,6 +184,6 @@ def upload():
 
 
     return render_template('base.html',lab0="Report",lab1=rock,lab2=f.filename,lab3=rocktype,lab4=comp,lab5=env,lab6=char,lab7=use,l1="Rock Type   ",l2="Composition ",l3="Environment ",l4="Characterstics ",l5="Use ",l0=" Rock")
-
+'''
 if __name__ == '__main__':
     app.run()
