@@ -182,4 +182,4 @@ def upload():
     return render_template('base.html',lab0="Report",lab1=rock,lab2=f.filename,lab3=rocktype,lab4=comp,lab5=env,lab6=char,lab7=use,l1="Rock Type   ",l2="Composition ",l3="Environment ",l4="Characterstics ",l5="Use ",l0=" Rock")
 
 if __name__ == '__main__':
-    app.run(debug = True, threaded = False)
+    app.run()
